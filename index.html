@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Portfolio | Jegan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #8b5cf6;
+            --secondary: #3b82f6;
+            --accent: #10b981;
+            --dark: #0f172a;
+            --darker: #020617;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--darker);
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        
+        .cyber-font {
+            font-family: 'Orbitron', monospace;
+        }
+        
+        .glow {
+            text-shadow: 0 0 10px rgba(139, 92, 246, 0.7);
+        }
+        
+        .card-glow {
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .card-glow:hover {
+            box-shadow: 0 0 25px rgba(139, 92, 246, 0.5);
+            transform: translateY(-5px);
+        }
+        
+        .gradient-border {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            padding: 1px;
+        }
+        
+        .cyber-grid {
+            background-image: 
+                linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+        
+        .terminal {
+            background-color: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 16px;
+            font-family: 'Consolas', monospace;
+        }
+        
+        .terminal-header {
+            display: flex;
+            margin-bottom: 12px;
+        }
+        
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+        
+        .tool-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .tool-icon:hover {
+            transform: scale(1.1);
+            color: var(--primary);
+        }
+        
+        .cyber-button {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            transition: all 0.3s ease;
+        }
+        
+        .cyber-button:hover {
+            background: linear-gradient(45deg, var(--secondary), var(--accent));
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .profile-img {
+            border: 3px solid var(--primary);
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+            object-fit: cover;
+        }
+        
+        .experience-card {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(59, 130, 246, 0.1));
+            border-left: 4px solid var(--primary);
+        }
+        
+        .timeline-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--primary);
+            position: absolute;
+            left: -8px;
+            top: 24px;
+        }
+        
+        .timeline-line {
+            width: 2px;
+            background: rgba(139, 92, 246, 0.3);
+            position: absolute;
+            left: -1px;
+            top: 40px;
+            bottom: 0;
+        }
+        
+        .project-card {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(139, 92, 246, 0.1));
+            border-bottom: 3px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.2);
+        }
+        
+        .achievement-card {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(239, 68, 68, 0.1));
+            border-bottom: 3px solid #f59e0b;
+            transition: all 0.3s ease;
+        }
+        
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.2);
+        }
+        
+        .mentoring-card {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(16, 185, 129, 0.1));
+            border-bottom: 3px solid #3b82f6;
+            transition: all 0.3s ease;
+        }
+        
+        .mentoring-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-text {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .timeline-line {
+                left: 15px;
+            }
+            
+            .timeline-dot {
+                left: 7px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-text {
+                font-size: 2rem;
+            }
+            
+            .card-container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-gray-900/90 backdrop-blur-sm z-50 border-b border-gray-800">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="text-2xl font-bold cyber-font text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">
+                <span class="glow">JEGAN</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-gray-300 hover:text-white">Home</a>
+                <a href="#about" class="nav-link text-gray-300 hover:text-white">About</a>
+                <a href="#experience" class="nav-link text-gray-300 hover:text-white">Experience</a>
+                <a href="#projects" class="nav-link text-gray-300 hover:text-white">Projects</a>
+                <a href="#tools" class="nav-link text-gray-300 hover:text-white">Tools</a>
+                <a href="#achievements" class="nav-link text-gray-300 hover:text-white">Achievements</a>
+                <a href="#contact" class="nav-link text-gray-300 hover:text-white">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-white">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800/90">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-300 hover:text-white">Home</a>
+                <a href="#about" class="block px-3 py-2 text-gray-300 hover:text-white">About</a>
+                <a href="#experience" class="block px-3 py-2 text-gray-300 hover:text-white">Experience</a>
+                <a href="#projects" class="block px-3 py-2 text-gray-300 hover:text-white">Projects</a>
+                <a href="#tools" class="block px-3 py-2 text-gray-300 hover:text-white">Tools</a>
+                <a href="#achievements" class="block px-3 py-2 text-gray-300 hover:text-white">Achievements</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-300 hover:text-white">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden cyber-grid">
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-blue-900/20"></div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 cyber-font hero-text">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">
+                    JEGANNITHIRAJAN J</span>
+                <br>
+                <span class="text-white">CYBERSECURITY PRACTITIONER</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-gray-300">
+                Penetration Testing | OSINT | Security Automation | SIEM&nbsp;</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#tools" class="cyber-button px-8 py-4 rounded-lg font-semibold text-white">
+                    <i class="fas fa-tools mr-2"></i> Explore My Arsenal
+                </a>
+                <a href="#contact" class="px-8 py-4 rounded-lg font-semibold border-2 border-purple-500 text-purple-400 hover:bg-purple-500/10 transition">
+                    <i class="fas fa-envelope mr-2"></i> Get In Touch
+                </a>
+            </div>
+            <div class="mt-16 pulse-animation">
+                <i class="fas fa-chevron-down text-3xl text-purple-500"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-800/50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 cyber-font text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 section-title">
+                ABOUT ME
+            </h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row items-center gap-8 mb-10">
+                    <div class="flex-shrink-0">
+                        <!-- Profile Image Updated Here -->
+                        <img src="c29ab9478d9c8f3f84e070d65b2514bc.jpg" alt="Jegan Nithi - Cybersecurity Professional" class="w-48 h-48 rounded-full profile-img">
+                    </div>
+                    <div class="text-center md:text-left">
+                        <h3 class="text-2xl font-bold mb-2 text-purple-400">Jegannithirajan J</h3>
+                        <p class="text-lg text-gray-300 mb-4">Cybersecurity Specialist | Ethical Hacker | Security Researcher</p>
+                        <div class="flex flex-wrap justify-center md:justify-start gap-2">
+                            <span class="px-3 py-1 bg-purple-900/50 text-purple-300 rounded-full text-sm">Penetration Testing</span>
+                            <span class="px-3 py-1 bg-blue-900/50 text-blue-300 rounded-full text-sm">OSINT</span>
+                            <span class="px-3 py-1 bg-green-900/50 text-green-300 rounded-full text-sm">Security Automation</span>
+                            <span class="px-3 py-1 bg-yellow-900/50 text-yellow-300 rounded-full text-sm">SIEM</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <div class="terminal-dot bg-red-500"></div>
+                        <div class="terminal-dot bg-yellow-500"></div>
+                        <div class="terminal-dot bg-green-500"></div>
+                    </div>
+                    <div class="text-green-400">
+                        <p><span class="text-purple-400">$</span> whoami</p>
+                        <p class="ml-4">Cybersecurity enthusiast with hands-on experience in penetration testing, OSINT, and security automation</p>
+                        <br>
+                        <p><span class="text-purple-400">$</span> cat background.txt</p>
+                        <p class="ml-4">Based in Madurai, India with over 3 years of experience in cybersecurity</p>
+                        <p class="ml-4">Specialized in identifying vulnerabilities and implementing security controls</p>
+                        <p class="ml-4">Passionate about continuous learning and staying updated with the latest security threats</p>
+                        <p class="ml-4">Dedicated to mentoring junior students and sharing knowledge in the cybersecurity community</p>
+                        <br>
+                        <p><span class="text-purple-400">$</span> cat skills.txt</p>
+                        <p class="ml-4">- Vulnerability assessment and penetration testing</p>
+                        <p class="ml-4">- Open-source intelligence gathering</p>
+                        <p class="ml-4">- Security tool development and automation</p>
+                        <p class="ml-4">- SIEM implementation and monitoring</p>
+                        <p class="ml-4">- Incident response and digital forensics</p>
+                        <p class="ml-4">- Security awareness training and mentoring</p>
+                        <br>
+                        <p><span class="text-purple-400">$</span> cat philosophy.txt</p>
+                        <p class="ml-4">"Security is not a product, but a process. It's not about being unhackable,</p>
+                        <p class="ml-4">but about making it harder for attackers to succeed."</p>
+                        <br>
+                        <p><span class="text-purple-400">$</span> echo "Constantly learning and evolving in the cybersecurity landscape"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 cyber-font text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 section-title">
+                EXPERIENCE
+            </h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="relative pl-8 md:pl-8">
+                    <div class="timeline-line"></div>
+                    
+                    <div class="mb-12 relative">
+                        <div class="timeline-dot"></div>
+                        <div class="experience-card p-6 rounded-lg">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                                <h3 class="text-2xl font-bold text-purple-400">CypherDote</h3>
+                                <span class="text-sm text-gray-400 bg-gray-800 px-3 py-1 rounded-full">2022 - Present</span>
+                            </div>
+                            <h4 class="text-lg font-semibold mb-3 text-blue-400">Cybersecurity Intern</h4>
+                            <p class="text-gray-300 mb-4">
+                                CypherDote is a product-based and service-based company that provides comprehensive cybersecurity solutions. 
+                                They offer specialized training programs and security services including network and web application VAPT.
+                            </p>
+                            <div class="mb-4">
+                                <h5 class="font-semibold text-green-400 mb-2">Key Responsibilities:</h5>
+                                <ul class="list-disc pl-5 text-gray-300 space-y-1">
+                                    <li>Conducted network and web application vulnerability assessments</li>
+                                    <li>Performed penetration testing on client infrastructure</li>
+                                    <li>Developed security automation scripts using Python</li>
+                                    <li>Assisted in implementing SIEM solutions for clients</li>
+                                    <li>Participated in security awareness training programs</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-yellow-400 mb-2">Services Provided:</h5>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Network VAPT</span>
+                                    <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Web VAPT</span>
+                                    <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Security Training</span>
+                                    <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">SIEM Implementation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-12 relative">
+                        <div class="timeline-dot"></div>
+                        <div class="mentoring-card p-6 rounded-lg">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                                <h3 class="text-2xl font-bold text-blue-400">Mentoring Program</h3>
+                                <span class="text-sm text-gray-400 bg-gray-800 px-3 py-1 rounded-full">2021 - Present</span>
+                            </div>
+                            <h4 class="text-lg font-semibold mb-3 text-green-400">Cybersecurity Mentor</h4>
+                            <p class="text-gray-300 mb-4">
+                                Actively mentoring junior students and aspiring cybersecurity professionals through online platforms and local communities.
+                            </p>
+                            <div class="mb-4">
+                                <h5 class="font-semibold text-green-400 mb-2">Mentoring Activities:</h5>
+                                <ul class="list-disc pl-5 text-gray-300 space-y-1">
+                                    <li>Conducted workshops on penetration testing fundamentals</li>
+                                    <li>Guided students through CTF challenges and labs</li>
+                                    <li>Created learning resources and study materials</li>
+                                    <li>Provided career guidance and interview preparation</li>
+                                    <li>Organized virtual study groups for cybersecurity certifications</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-yellow-400 mb-2">Impact:</h5>
+                                <p class="text-gray-300">Helped over 30 students begin their cybersecurity journey and successfully complete entry-level certifications.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-800/50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 cyber-font text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 section-title">
+                PROJECTS
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto card-container">
+                <div class="project-card rounded-xl overflow-hidden card-glow">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-wifi text-3xl text-red-500 mr-3"></i>
+                            <h3 class="text-xl font-bold">Deauth Tool with GUI</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            A user-friendly wireless deauthentication tool with graphical interface for testing network security and WiFi penetration testing.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-gray-700 rounded text-sm">Python</span>
+                            <span class="px-2 py-1 bg-gray-700 rounded text-sm">Tkinter</span>
+                            <span class="px-2 py-1 bg-gray-700 rounded text-sm">Scapy</span>
+                            <span class="px-2 py-1 bg-gray-700 rounded text-sm">Aircrack-ng</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-green-400 hover:text-green-300">View Details</a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card rounded-xl overflow-hidden card-glow">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-chart-line text-3xl text-yellow-500 mr-3"></i>
+                            <h3 class="text-xl font-bold">SIEM Dashboard</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            Built a custom dashboard for visualizing security events and alerts from Wazuh SIEM.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-gray-700 rounded text-sm">ELK Stack</span>
+                            <span class="px-2 py-1 bg-gray-700 rounded text-sm">Wazuh</span>
+                            <span class="px-2 py-1 bg-gray-700 rounded text-sm">Visualization</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-green-400 hover:text-green-300">View Details</a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card rounded-xl overflow-hidden card-glow">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-graduation-cap text-3xl text-purple-500 mr-3"></i>
+                            <h3 class="text-xl font-bold">Cybersecurity Learning Platform</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            Developed an online platform with interactive labs and challenges for learning cybersecurity concepts.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-gray-700 rounded text-sm">Web Dev</span>
+                            <span class="px-2 py-1 bg-gray-700 rounded text-sm">Docker</span>
+                            <span class="px-2 py-1 bg-gray-700 rounded text-sm">Virtualization</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-green-400 hover:text-green-300">View Details</a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools & Technologies Section -->
+    <section id="tools" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-6 cyber-font text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 section-title">
+                TOOLS &amp; TECHNOLOGIES
+            </h2>
+            <p class="text-center max-w-3xl mx-auto mb-16 text-gray-400 text-lg">
+                My arsenal of cybersecurity tools across penetration testing, OSINT, scripting, and monitoring
+            </p>
+            
+            <!-- Offensive Security Tools -->
+            <div class="mb-20">
+                <h3 class="text-2xl font-bold mb-8 text-purple-400 flex items-center">
+                    <i class="fas fa-lock-open mr-3 text-2xl"></i> OFFENSIVE SECURITY TOOLS
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <div class="gradient-border rounded-xl">
+                        <div class="bg-gray-800 p-6 rounded-xl h-full card-glow">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-bug text-3xl text-purple-500 mr-3 tool-icon"></i>
+                                <h4 class="text-xl font-semibold">Burp Suite</h4>
+                            </div>
+                            <p class="text-gray-400">Web vulnerability scanning and request interception</p>
+                        </div>
+                    </div>
+                    <div class="gradient-border rounded-xl">
+                        <div class="bg-gray-800 p-6 rounded-xl h-full card-glow">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-network-wired text-3xl text-blue-500 mr-3 tool-icon"></i>
+                                <h4 class="text-xl font-semibold">Nmap</h4>
+                            </div>
+                            <p class="text-gray-400">Network scanning, host discovery, and enumeration</p>
+                        </div>
+                    </div>
+                    <div class="gradient-border rounded-xl">
+                        <div class="bg-gray-800 p-6 rounded-xl h-full card-glow">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-wifi text-3xl text-green-500 mr-3 tool-icon"></i>
+                                <h4 class="text-xl font-semibold">Aircrack-ng</h4>
+                            </div>
+                            <p class="text-gray-400">Wireless network monitoring and deauthentication attacks</p>
+                        </div>
+                    </div>
+                    <div class="gradient-border rounded-xl">
+                        <div class="bg-gray-800 p-6 rounded-xl h-full card-glow">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-project-diagram text-3xl text-yellow-500 mr-3 tool-icon"></i>
+                                <h4 class="text-xl font-semibold">Wireshark</h4>
+                            </div>
+                            <p class="text-gray-400">Deep packet inspection and traffic analysis</p>
+                        </div>
+                    </div>
+                    <div class="gradient-border rounded-xl">
+                        <div class="bg-gray-800 p-6 rounded-xl h-full card-glow">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-shield-alt text-3xl text-red-500 mr-3 tool-icon"></i>
+                                <h4 class="text-xl font-semibold">Metasploit</h4>
+                            </div>
+                            <p class="text-gray-400">Exploit development and post-exploitation modules</p>
+                        </div>
+                    </div>
+                    <div class="gradient-border rounded-xl">
+                        <div class="bg-gray-800 p-6 rounded-xl h-full card-glow">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-search text-3xl text-indigo-500 mr-3 tool-icon"></i>
+                                <h4 class="text-xl font-semibold">Nikto/Gobuster</h4>
+                            </div>
+                            <p class="text-gray-400">Web server scanning and directory enumeration</p>
+                        </div>
+                    </div>
+                    <div class="gradient-border rounded-xl">
+                        <div class="bg-gray-800 p-6 rounded-xl h-full card-glow">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-key text-3xl text-pink-500 mr-3 tool-icon"></i>
+                                <h4 class="text-xl font-semibold">Hydra</h4>
+                            </div>
+                            <p class="text-gray-400">Credential brute-forcing for common protocols</p>
+                        </div>
+                    </div>
+                    <div class="gradient-border rounded-xl">
+                        <div class="bg-gray-800 p-6 rounded-xl h-full card-glow">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-fish text-3xl text-cyan-500 mr-3 tool-icon"></i>
+                                <h4 class="text-xl font-semibold">CAPS</h4>
+                            </div>
+                            <p class="text-gray-400">Phishing simulation tool for security awareness training</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- OSINT & Forensics Tools -->
+            <div class="mb-20">
+                <h3 class="text-2xl font-bold mb-8 text-blue-400 flex items-center">
+                    <i class="fas fa-user-secret mr-3 text-2xl"></i> OSINT &amp; FORENSICS TOOLS
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <div class="gradient-border rounded-xl">
+                        <div class="bg-gray-800 p-6 rounded-xl h-full card-glow">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-users text-3xl text-purple-500 mr-3 tool-icon"></i>
+                                <h4 class="text-xl font-semibold">Sherlock</h4>
+                            </div>
+                            <p class="text-gray-400">Username enumeration across online platforms</p>
+                        </div>
+                    </div>
+                    <div class="gradient-border rounded-xl">
+                        <div class="bg-gray-800 p-6 rounded-xl h-full card-glow">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-file-image text-3xl text-blue-500 mr-3 tool-icon"></i>
+                                <h4 class="text-xl font-semibold">ExifTool</h4>
+                            </div>
+                            <p class="text-gray-400">File metadata extraction and analysis</p>
+                        </div>
+                    </div>
+                    <div class="gradient-border rounded-xl">
+                        <div class="bg-gray-800 p-6 rounded-xl h-full card-glow">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-envelope text-3xl text-green-500 mr-3 tool-icon"></i>
+                                <h4 class="text-xl font-semibold">theHarvester</h4>
+                            </div>
+                            <p class="text-gray-400">Passive reconnaissance for emails and subdomains</p>
+                        </div>
+                    </div>
+                    <div class="gradient-border rounded-xl">
+                        <div class="bg-gray-800 p-6 rounded-xl h-full card-glow">
+                            <div class="flex items-center mb-4">
+                                <i class="fab fa-google text-3xl text-yellow-500 mr-3 tool-icon"></i>
+                                <h4 class="text-xl font-semibold">GHunt</h4>
+                            </div>
+                            <p class="text-gray-400">Google account OSINT profiling</p>
+                        </div>
+                    </div>
+                    <div class="gradient-border rounded-xl">
+                        <div class="bg-gray-800 p-6 rounded-xl h-full card-glow">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-folder-open text-3xl text-red-500 mr-3 tool-icon"></i>
+                                <h4 class="text-xl font-semibold">Binwalk</h4>
+                            </div>
+                            <p class="text-gray-400">File carving and steganographic analysis</p>
+                        </div>
+                    </div>
+                    <div class="gradient-border rounded-xl">
+                        <div class="bg-gray-800 p-6 rounded-xl h-full card-glow">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-microscope text-3xl text-indigo-500 mr-3 tool-icon"></i>
+                                <h4 class="text-xl font-semibold">Autopsy</h4>
+                            </div>
+                            <p class="text-gray-400">Forensic analysis of drives and media</p>
+                        </div>
+                    </div>
+                    <div class="gradient-border rounded-xl">
+                        <div class="bg-gray-800 p-6 rounded-xl h-full card-glow">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-memory text-3xl text-pink-500 mr-3 tool-icon"></i>
+                                <h4 class="text-xl font-semibold">Volatility</h4>
+                            </div>
+                            <p class="text-gray-400">Memory dump analysis for malware forensics</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scripting & Automation -->
+            <div class="mb-20">
+                <h3 class="text-2xl font-bold mb-8 text-green-400 flex items-center">
+                    <i class="fas fa-code mr-3 text-2xl"></i> SCRIPTING &amp; AUTOMATION
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <div class="gradient-border rounded-xl">
+                        <div class="bg-gray-800 p-6 rounded-xl h-full card-glow">
+                            <div class="flex items-center mb-4">
+                                <i class="fab fa-python text-3xl text-blue-500 mr-3 tool-icon"></i>
+                                <h4 class="text-xl font-semibold">Python</h4>
+                            </div>
+                            <p class="text-gray-400">Core scripting language for automation and tool development</p>
+                        </div>
+                    </div>
+                    <div class="gradient-border rounded-xl">
+                        <div class="bg-gray-800 p-6 rounded-xl h-full card-glow">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-terminal text-3xl text-green-500 mr-3 tool-icon"></i>
+                                <h4 class="text-xl font-semibold">Bash</h4>
+                            </div>
+                            <p class="text-gray-400">Command-line automation and shell scripting</p>
+                        </div>
+                    </div>
+                    <div class="gradient-border rounded-xl">
+                        <div class="bg-gray-800 p-6 rounded-xl h-full card-glow">
+                            <div class="flex items-center mb-4">
+                                <i class="fab fa-docker text-3xl text-blue-400 mr-3 tool-icon"></i>
+                                <h4 class="text-xl font-semibold">Docker</h4>
+                            </div>
+                            <p class="text-gray-400">Containerizing tools and isolated environments</p>
+                        </div>
+                    </div>
+                    <div class="gradient-border rounded-xl">
+                        <div class="bg-gray-800 p-6 rounded-xl h-full card-glow">
+                            <div class="flex items-center mb-4">
+                                <i class="fab fa-git-alt text-3xl text-orange-500 mr-3 tool-icon"></i>
+                                <h4 class="text-xl font-semibold">Git/GitHub</h4>
+                            </div>
+                            <p class="text-gray-400">Version control and collaborative development</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Monitoring & SIEM -->
+            <div class="mb-20">
+                <h3 class="text-2xl font-bold mb-8 text-yellow-400 flex items-center">
+                    <i class="fas fa-chart-line mr-3 text-2xl"></i> MONITORING &amp; SIEM
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="gradient-border rounded-xl">
+                        <div class="bg-gray-800 p-6 rounded-xl h-full card-glow">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-shield-alt text-3xl text-green-500 mr-3 tool-icon"></i>
+                                <h4 class="text-xl font-semibold">Wazuh</h4>
+                            </div>
+                            <p class="text-gray-400">Open-source SIEM and XDR platform for endpoint protection, log analysis, and real-time alerts</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Platforms & Environments -->
+            <div>
+                <h3 class="text-2xl font-bold mb-8 text-pink-400 flex items-center">
+                    <i class="fas fa-laptop-code mr-3 text-2xl"></i> PLATFORMS &amp; ENVIRONMENTS
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="gradient-border rounded-xl">
+                        <div class="bg-gray-800 p-6 rounded-xl h-full card-glow">
+                            <div class="flex items-center mb-4">
+                                <i class="fab fa-linux text-3xl text-blue-500 mr-3 tool-icon"></i>
+                                <h4 class="text-xl font-semibold">Kali Linux</h4>
+                            </div>
+                            <p class="text-gray-400">Primary OS for offensive security tasks</p>
+                        </div>
+                    </div>
+                    <div class="gradient-border rounded-xl">
+                        <div class="bg-gray-800 p-6 rounded-xl h-full card-glow">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-flag text-3xl text-red-500 mr-3 tool-icon"></i>
+                                <h4 class="text-xl font-semibold">Hack The Box</h4>
+                            </div>
+                            <p class="text-gray-400">CTF platform for practical learning</p>
+                        </div>
+                    </div>
+                    <a href="https://tryhackme.com/p/JeganX19" target="_blank" class="gradient-border rounded-xl">
+                        <div class="bg-gray-800 p-6 rounded-xl h-full card-glow">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-graduation-cap text-3xl text-purple-500 mr-3 tool-icon"></i>
+                                <h4 class="text-xl font-semibold">TryHackMe</h4>
+                            </div>
+                            <p class="text-gray-400">Hands-on cybersecurity learning platform</p>
+                        </div>
+                    </a>
+                    <a href="https://github.com/Jeg4nX19" target="_blank" class="gradient-border rounded-xl">
+                        <div class="bg-gray-800 p-6 rounded-xl h-full card-glow">
+                            <div class="flex items-center mb-4">
+                                <i class="fab fa-github text-3xl text-gray-300 mr-3 tool-icon"></i>
+                                <h4 class="text-xl font-semibold">GitHub</h4>
+                            </div>
+                            <p class="text-gray-400">Code hosting and collaboration</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-20 bg-gray-800/50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 cyber-font text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 section-title">
+                ACHIEVEMENTS
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto card-container">
+                <div class="achievement-card rounded-xl p-6 card-glow">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-certificate text-3xl text-yellow-500 mr-3"></i>
+                        <h3 class="text-xl font-bold">Certifications</h3>
+                    </div>
+                    <ul class="text-gray-300 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>CEHv13 (Certified Ethical Hacker v13)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Palo Alto Networks Cloud Security</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="achievement-card rounded-xl p-6 card-glow">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-trophy text-3xl text-yellow-500 mr-3"></i>
+                        <h3 class="text-xl font-bold">CTF Participation</h3>
+                    </div>
+                    <ul class="text-gray-300 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-medal text-yellow-500 mt-1 mr-2"></i>
+                            <span>Hack The Box - 20+ machines rooted</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-medal text-yellow-500 mt-1 mr-2"></i>
+                            <span>TryHackMe - Completed multiple learning paths</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-medal text-yellow-500 mt-1 mr-2"></i>
+                            <span>JMC College - CTF competition finalist</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-medal text-yellow-500 mt-1 mr-2"></i>
+                            <span>St. Joseph College - CTF event participant</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-medal text-yellow-500 mt-1 mr-2"></i>
+                            <span>Amrita University - National CTF participant</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="achievement-card rounded-xl p-6 card-glow">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-chalkboard-teacher text-3xl text-yellow-500 mr-3"></i>
+                        <h3 class="text-xl font-bold">Community Contributions</h3>
+                    </div>
+                    <ul class="text-gray-300 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-star text-yellow-500 mt-1 mr-2"></i>
+                            <span>Hosting CTF challenges for clients</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-star text-yellow-500 mt-1 mr-2"></i>
+                            <span>Creating custom CTF questions for events</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-star text-yellow-500 mt-1 mr-2"></i>
+                            <span>Linked with hosting vendors for security events</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-star text-yellow-500 mt-1 mr-2"></i>
+                            <span>Created cybersecurity learning resources</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-star text-yellow-500 mt-1 mr-2"></i>
+                            <span>Organized local security workshops</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-star text-yellow-500 mt-1 mr-2"></i>
+                            <span>Mentored 30+ junior cybersecurity enthusiasts</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 cyber-font text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 section-title">
+                GET IN TOUCH
+            </h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6 text-purple-400">Connect With Me</h3>
+                        <p class="text-gray-400 mb-8">
+                            Feel free to reach out for collaborations, opportunities, or just to discuss cybersecurity topics.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-purple-500 text-xl w-8"></i>
+                                <span>jegannithi778@gmail.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-purple-500 text-xl w-8"></i>
+                                <span>Madurai, Tamil Nadu, India</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-briefcase text-purple-500 text-xl w-8"></i>
+                                <span>Available for freelance projects</span>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h4 class="text-lg font-semibold mb-4">Follow Me</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://github.com/Jeg4nX19" target="_blank" class="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center hover:bg-purple-600 transition">
+                                    <i class="fab fa-github text-xl"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/jegannithirajan-j-0b1618293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center hover:bg-blue-600 transition">
+                                    <i class="fab fa-linkedin text-xl"></i>
+                                </a>
+                                <a href="https://tryhackme.com/p/JeganX19" target="_blank" class="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-600 transition">
+                                    <i class="fas fa-graduation-cap text-xl"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center hover:bg-blue-400 transition">
+                                    <i class="fab fa-twitter text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <form class="terminal">
+                            <div class="terminal-header">
+                                <div class="terminal-dot bg-red-500"></div>
+                                <div class="terminal-dot bg-yellow-500"></div>
+                                <div class="terminal-dot bg-green-500"></div>
+                            </div>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-green-400 mb-2">Name:</label>
+                                    <input type="text" class="w-full bg-gray-900 border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:border-purple-500">
+                                </div>
+                                <div>
+                                    <label class="block text-green-400 mb-2">Email:</label>
+                                    <input type="email" class="w-full bg-gray-900 border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:border-purple-500">
+                                </div>
+                                <div>
+                                    <label class="block text-green-400 mb-2">Message:</label>
+                                    <textarea rows="4" class="w-full bg-gray-900 border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:border-purple-500"></textarea>
+                                </div>
+                                <button type="submit" class="cyber-button px-6 py-2 rounded-lg font-semibold text-white">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
