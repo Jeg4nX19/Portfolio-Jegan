@@ -141,6 +141,17 @@
             box-shadow: 0 10px 25px rgba(139, 92, 246, 0.2);
         }
         
+        .experience-card {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(16, 185, 129, 0.1));
+            border-left: 4px solid var(--secondary);
+            transition: all 0.3s ease;
+        }
+        
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
+        }
+        
         .skill-card {
             background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(139, 92, 246, 0.1));
             border-bottom: 3px solid var(--accent);
@@ -173,6 +184,17 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
         }
+        
+        .certification-card {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(59, 130, 246, 0.1));
+            border-bottom: 3px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .certification-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.2);
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-100">
@@ -185,9 +207,11 @@
                 <a href="#home" class="nav-link text-gray-300 hover:text-white">Home</a>
                 <a href="#about" class="nav-link text-gray-300 hover:text-white">About</a>
                 <a href="#leadership" class="nav-link text-gray-300 hover:text-white">Leadership</a>
+                <a href="#experience" class="nav-link text-gray-300 hover:text-white">Experience</a>
                 <a href="#skills" class="nav-link text-gray-300 hover:text-white">Skills</a>
                 <a href="#projects" class="nav-link text-gray-300 hover:text-white">Projects</a>
                 <a href="#achievements" class="nav-link text-gray-300 hover:text-white">Achievements</a>
+                <a href="#certifications" class="nav-link text-gray-300 hover:text-white">Certifications</a>
                 <a href="#contact" class="nav-link text-gray-300 hover:text-white">Contact</a>
             </div>
             <button class="mobile-menu-btn md:hidden text-gray-300">
@@ -198,9 +222,11 @@
             <a href="#home" class="block px-4 py-2 text-gray-300 hover:bg-gray-700">Home</a>
             <a href="#about" class="block px-4 py-2 text-gray-300 hover:bg-gray-700">About</a>
             <a href="#leadership" class="block px-4 py-2 text-gray-300 hover:bg-gray-700">Leadership</a>
+            <a href="#experience" class="block px-4 py-2 text-gray-300 hover:bg-gray-700">Experience</a>
             <a href="#skills" class="block px-4 py-2 text-gray-300 hover:bg-gray-700">Skills</a>
             <a href="#projects" class="block px-4 py-2 text-gray-300 hover:bg-gray-700">Projects</a>
             <a href="#achievements" class="block px-4 py-2 text-gray-300 hover:bg-gray-700">Achievements</a>
+            <a href="#certifications" class="block px-4 py-2 text-gray-300 hover:bg-gray-700">Certifications</a>
             <a href="#contact" class="block px-4 py-2 text-gray-300 hover:bg-gray-700">Contact</a>
         </div>
     </nav>
@@ -238,7 +264,7 @@
                 </div>
                 <div class="px-4 py-2 bg-gray-800/70 rounded-full flex items-center card-glow">
                     <i class="fas fa-code text-purple-500 mr-2"></i>
-                    <span>Python & OSINT Automation</span>
+                    <span>Python &amp; OSINT Automation</span>
                 </div>
             </div>
             
@@ -246,7 +272,7 @@
                 <a href="mailto:jegannithi778@gmail.com" class="cyber-button px-6 py-3 rounded-lg font-semibold text-white flex items-center">
                     <i class="fas fa-envelope mr-2"></i> Email
                 </a>
-                <a href="https://www.linkedin.com/in/jegannithirajan-j-0b1618293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="cyber-button px-6 py-3 rounded-lg font-semibold text-white flex items-center">
+                <a href="https://www.linkedin.com/in/jegannithirajan-j-0b1618293?utm_source=share&amp;utm_campaign=share_via&amp;utm_content=profile&amp;utm_medium=android_app" target="_blank" class="cyber-button px-6 py-3 rounded-lg font-semibold text-white flex items-center">
                     <i class="fab fa-linkedin mr-2"></i> LinkedIn
                 </a>
                 <a href="https://tryhackme.com/p/JeganX19" target="_blank" class="cyber-button px-6 py-3 rounded-lg font-semibold text-white flex items-center">
@@ -337,8 +363,70 @@
         </div>
     </section>
 
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-800/50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 cyber-font text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">
+                PROFESSIONAL EXPERIENCE
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div class="experience-card p-6 rounded-xl card-glow">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-blue-400">CYPHERDOTE</h3>
+                        <span class="text-sm text-gray-400 bg-gray-800 px-3 py-1 rounded-full">June 2025 – Present</span>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-3 text-purple-400">Cyber Security Intern/Researcher</h4>
+                    <ul class="text-gray-300 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Tested and improved CAPS (Advanced Phishing Simulator) to enhance phishing detection</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Conducted phishing campaign simulations to strengthen employee security awareness</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Reported vulnerabilities and recommended defensive strategies to reduce risk</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Hands-on experience with System Hacking, Android Hacking (Metasploit), Nessus scanning, and AWS Penetration testing</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="experience-card p-6 rounded-xl card-glow">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-blue-400">KNULL CTF</h3>
+                        <span class="text-sm text-gray-400 bg-gray-800 px-3 py-1 rounded-full">July 2025 – Present</span>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-3 text-purple-400">CTF Organizer &amp; Infrastructure Manager</h4>
+                    <ul class="text-gray-300 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Built and deployed secure backend infrastructure for CTF competitions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Designed and hosted custom challenges in Web, OSINT, Crypto, Forensics, and Reverse Engineering</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Ensured 24/7 technical support and smooth event operations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Organized major events: R00T@WAR CTF 2025 at PSNACET (Onsite) and KnullCTF 2025 (Online, global participation)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-800/50">
+    <section id="skills" class="py-20 bg-gray-900">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-16 cyber-font text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">
                 SKILLS
@@ -346,61 +434,97 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <div class="skill-card rounded-xl p-6 card-glow">
                     <h3 class="text-xl font-bold mb-4 text-green-400 flex items-center">
-                        <i class="fas fa-shield-alt mr-3"></i> Cybersecurity & Penetration Testing
+                        <i class="fas fa-shield-alt mr-3"></i> Offensive Security &amp; Tools
                     </h3>
                     <ul class="text-gray-300 space-y-2">
                         <li class="flex items-start">
                             <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
-                            <span>Web Security</span>
+                            <span>Penetration Testing</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
-                            <span>Network Security</span>
+                            <span>Vulnerability Assessment</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
-                            <span>Wi-Fi Security</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
-                            <span>Linux Security</span>
+                            <span>Exploit Development</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
                             <span>Ethical Hacking</span>
                         </li>
-                    </ul>
-                </div>
-                
-                <div class="skill-card rounded-xl p-6 card-glow">
-                    <h3 class="text-xl font-bold mb-4 text-green-400 flex items-center">
-                        <i class="fas fa-user-tie mr-3"></i> Leadership & Management
-                    </h3>
-                    <ul class="text-gray-300 space-y-2">
                         <li class="flex items-start">
                             <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
-                            <span>Team Leadership</span>
+                            <span>Web Application Penetration Testing</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
-                            <span>Project Management</span>
+                            <span>Network Pentesting (Nessus)</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
-                            <span>Mentoring & Training</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
-                            <span>Strategic Planning</span>
+                            <span>AWS Pentesting (Prowler Tool)</span>
                         </li>
                     </ul>
                 </div>
                 
                 <div class="skill-card rounded-xl p-6 card-glow">
                     <h3 class="text-xl font-bold mb-4 text-green-400 flex items-center">
-                        <i class="fas fa-user-secret mr-3"></i> OSINT & CTF Research
+                        <i class="fas fa-tools mr-3"></i> Security Tools
                     </h3>
                     <ul class="text-gray-300 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
+                            <span>Burp Suite</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
+                            <span>Wireshark</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
+                            <span>Nmap</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
+                            <span>Metasploit</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
+                            <span>Aircrack-ng</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card rounded-xl p-6 card-glow">
+                    <h3 class="text-xl font-bold mb-4 text-green-400 flex items-center">
+                        <i class="fas fa-code mr-3"></i> Programming &amp; Scripting
+                    </h3>
+                    <ul class="text-gray-300 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
+                            <span>Python</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
+                            <span>Bash</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card rounded-xl p-6 card-glow">
+                    <h3 class="text-xl font-bold mb-4 text-green-400 flex items-center">
+                        <i class="fas fa-user-secret mr-3"></i> OSINT &amp; Automation
+                    </h3>
+                    <ul class="text-gray-300 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
+                            <span>Open-Source Intelligence Gathering</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
+                            <span>Custom Reconnaissance &amp; Enumeration Scripts</span>
+                        </li>
                         <li class="flex items-start">
                             <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
                             <span>Username tracking</span>
@@ -422,67 +546,31 @@
                 
                 <div class="skill-card rounded-xl p-6 card-glow">
                     <h3 class="text-xl font-bold mb-4 text-green-400 flex items-center">
-                        <i class="fas fa-code mr-3"></i> Scripting & Automation
+                        <i class="fas fa-user-tie mr-3"></i> Leadership &amp; Management
                     </h3>
                     <ul class="text-gray-300 space-y-2">
                         <li class="flex items-start">
                             <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
-                            <span>Python</span>
+                            <span>Team Leadership</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
-                            <span>Bash</span>
+                            <span>Project Management</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
-                            <span>OSINT Automation</span>
+                            <span>Mentoring &amp; Training</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
-                            <span>Security Tool Development</span>
+                            <span>Strategic Planning</span>
                         </li>
                     </ul>
                 </div>
                 
                 <div class="skill-card rounded-xl p-6 card-glow">
                     <h3 class="text-xl font-bold mb-4 text-green-400 flex items-center">
-                        <i class="fas fa-tools mr-3"></i> Tooling
-                    </h3>
-                    <ul class="text-gray-300 space-y-2">
-                        <li class="flex items-start">
-                            <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
-                            <span>Aircrack-ng</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
-                            <span>Burp Suite</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
-                            <span>Wireshark</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
-                            <span>Nmap</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
-                            <span>Metasploit</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
-                            <span>CAPS</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
-                            <span>Nessus</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="skill-card rounded-xl p-6 card-glow">
-                    <h3 class="text-xl font-bold mb-4 text-green-400 flex items-center">
-                        <i class="fas fa-cloud mr-3"></i> Cloud & Hosting
+                        <i class="fas fa-cloud mr-3"></i> Cloud &amp; Hosting
                     </h3>
                     <ul class="text-gray-300 space-y-2">
                         <li class="flex items-start">
@@ -492,26 +580,6 @@
                         <li class="flex items-start">
                             <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
                             <span>GitHub Pages</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="skill-card rounded-xl p-6 card-glow">
-                    <h3 class="text-xl font-bold mb-4 text-green-400 flex items-center">
-                        <i class="fas fa-robot mr-3"></i> Others
-                    </h3>
-                    <ul class="text-gray-300 space-y-2">
-                        <li class="flex items-start">
-                            <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
-                            <span>Prompt Engineering</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
-                            <span>Report Writing</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-chevron-right text-green-500 mt-1 mr-2 text-xs"></i>
-                            <span>Blog Publishing</span>
                         </li>
                     </ul>
                 </div>
@@ -532,7 +600,7 @@
                             <i class="fas fa-wifi mr-3"></i> DisconnectX
                         </h3>
                         <p class="text-gray-300 mb-4">
-                            A Bash script using airodump-ng and aireplay-ng from Aircrack-ng.
+                            Wi-Fi Deauthentication Tool with GUI
                         </p>
                         <p class="text-gray-400 mb-3"><strong>Features:</strong></p>
                         <ul class="text-gray-300 mb-4 space-y-1">
@@ -556,6 +624,67 @@
                         </div>
                     </div>
                 </div>
+                
+                <div class="project-card rounded-xl overflow-hidden card-glow">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-4 text-yellow-400 flex items-center">
+                            <i class="fas fa-robot mr-3"></i> Vellora AI Chat-Bot
+                        </h3>
+                        <p class="text-gray-300 mb-4">
+                            Health care AI Chat-Bot for SIH 2025
+                        </p>
+                        <p class="text-gray-400 mb-3"><strong>Features:</strong></p>
+                        <ul class="text-gray-300 mb-4 space-y-1">
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-yellow-500 mt-1 mr-2 text-xs"></i>
+                                <span>AI-powered healthcare assistance</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-yellow-500 mt-1 mr-2 text-xs"></i>
+                                <span>Smart India Hackathon 2025 project</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-yellow-500 mt-1 mr-2 text-xs"></i>
+                                <span>Patient interaction and support</span>
+                            </li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <a href="#" target="_blank" class="text-gray-400 hover:text-white">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card rounded-xl overflow-hidden card-glow">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-4 text-yellow-400 flex items-center">
+                            <i class="fas fa-microchip mr-3"><br></i> Raspberry Pi 5 IDPS - Ongoing</h3>
+                        <p class="text-gray-300 mb-4">
+                            Intrusion Detection &amp; Prevention System (IoT Security) - Ongoing
+                        </p>
+                        <p class="text-gray-400 mb-3"><strong>Features:</strong></p>
+                        <ul class="text-gray-300 mb-4 space-y-1">
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-yellow-500 mt-1 mr-2 text-xs"></i>
+                                <span>IoT security monitoring system</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-yellow-500 mt-1 mr-2 text-xs"></i>
+                                <span>Real-time intrusion detection</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chevron-right text-yellow-500 mt-1 mr-2 text-xs"></i>
+                                <span>Prevention mechanisms for IoT devices</span>
+                            </li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <a href="#" target="_blank" class="text-gray-400 hover:text-white">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -564,15 +693,24 @@
     <section id="achievements" class="py-20 bg-gray-800/50">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-16 cyber-font text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">
-                CERTIFICATIONS & ACHIEVEMENTS
+                ACHIEVEMENTS
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <div class="achievement-card rounded-xl p-6 card-glow">
                     <div class="flex items-center mb-4">
-                        <i class="fas fa-certificate text-3xl text-blue-500 mr-3"></i>
-                        <h3 class="text-xl font-bold">CEH (Pursuing)</h3>
+                        <i class="fas fa-trophy text-3xl text-blue-500 mr-3"></i>
+                        <h3 class="text-xl font-bold">CTF Achievements</h3>
                     </div>
-                    <p class="text-gray-300">Currently pursuing Certified Ethical Hacker certification</p>
+                    <ul class="text-gray-300 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-medal text-yellow-500 mt-1 mr-2"></i>
+                            <span>Secured 6th place in a CTF competition at Sri Eshwar College</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-medal text-yellow-500 mt-1 mr-2"></i>
+                            <span>Ranked 11th out of 554 teams in a National-level CTF at Jamal Mohamed College</span>
+                        </li>
+                    </ul>
                 </div>
                 
                 <div class="achievement-card rounded-xl p-6 card-glow">
@@ -610,6 +748,50 @@
         </div>
     </section>
 
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 cyber-font text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">
+                GLOBAL CERTIFICATIONS
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div class="certification-card rounded-xl p-6 card-glow">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-certificate text-3xl text-purple-500 mr-3"></i>
+                        <h3 class="text-xl font-bold">CEH Certification</h3>
+                    </div>
+                    <p class="text-gray-300 mb-2">Ethical Hacking</p>
+                    <p class="text-gray-400 text-sm">EC-Council | July 2025 - Pursuing</p>
+                </div>
+                
+                <div class="certification-card rounded-xl p-6 card-glow">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-certificate text-3xl text-purple-500 mr-3"></i>
+                        <h3 class="text-xl font-bold">Linux Fundamentals</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm">TCM Security</p>
+                </div>
+                
+                <div class="certification-card rounded-xl p-6 card-glow">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-certificate text-3xl text-purple-500 mr-3"></i>
+                        <h3 class="text-xl font-bold">ISO/IEC 27001</h3>
+                    </div>
+                    <p class="text-gray-300 mb-2">Information Security Associate</p>
+                    <p class="text-gray-400 text-sm">SkillFront</p>
+                </div>
+                
+                <div class="certification-card rounded-xl p-6 card-glow">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-certificate text-3xl text-purple-500 mr-3"></i>
+                        <h3 class="text-xl font-bold">Cloud Security Fundamentals</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm">Palo Alto Networks Cybersecurity Academy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-gray-900">
         <div class="container mx-auto px-4">
@@ -641,7 +823,7 @@
                 <div class="mt-16">
                     <h3 class="text-2xl font-semibold mb-6 text-center text-purple-400">Connect With Me</h3>
                     <div class="flex justify-center space-x-6">
-                        <a href="https://www.linkedin.com/in/jegannithirajan-j-0b1618293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition">
+                        <a href="https://www.linkedin.com/in/jegannithirajan-j-0b1618293?utm_source=share&amp;utm_campaign=share_via&amp;utm_content=profile&amp;utm_medium=android_app" target="_blank" class="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition">
                             <i class="fab fa-linkedin text-2xl"></i>
                         </a>
                         <a href="https://tryhackme.com/p/JeganX19" target="_blank" class="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-600 transition">
@@ -661,7 +843,7 @@
     <!-- Footer -->
     <footer class="py-8 bg-gray-800/50 border-t border-gray-800">
         <div class="container mx-auto px-4 text-center">
-            <p class="text-gray-400">Made with 💻 & 🔐 by Jegannithirajan J</p>
+            <p class="text-gray-400">Made with 💻 &amp; 🔐 by Jegannithirajan J</p>
             <p class="text-gray-500 mt-2 text-sm">© 2025 Jegannithirajan. All rights reserved.</p>
         </div>
     </footer>
@@ -727,5 +909,5 @@
             observer.observe(section);
         });
     </script>
-</body>
-</html>
+
+</body></html>
